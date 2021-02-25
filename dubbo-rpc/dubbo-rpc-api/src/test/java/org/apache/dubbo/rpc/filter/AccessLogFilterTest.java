@@ -16,10 +16,8 @@
  */
 package org.apache.dubbo.rpc.filter;
 
-import java.lang.reflect.Field;
-import java.util.Map;
-import java.util.Set;
 import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.utils.DubboAppender;
 import org.apache.dubbo.common.utils.LogUtil;
 import org.apache.dubbo.rpc.Filter;
 import org.apache.dubbo.rpc.Invocation;
@@ -29,6 +27,10 @@ import org.apache.dubbo.rpc.support.MockInvocation;
 import org.apache.dubbo.rpc.support.MyInvoker;
 
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Field;
+import java.util.Map;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -50,6 +52,7 @@ public class AccessLogFilterTest {
         accessLogFilter.invoke(invoker, invocation);
         assertEquals(1, LogUtil.findMessage("Exception in AccessLogFilter of service"));
         LogUtil.stop();
+        DubboAppender.clear();
     }
 
     // TODO how to assert thread action
