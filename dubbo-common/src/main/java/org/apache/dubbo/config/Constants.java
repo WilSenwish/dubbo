@@ -30,6 +30,8 @@ public interface Constants {
 
     String LAYER_KEY = "layer";
 
+    String STUB_KEY = "stub";
+
     /**
      * General
      */
@@ -79,6 +81,7 @@ public interface Constants {
 
     String MULTICAST = "multicast";
 
+    String MULTIPLE = "multiple";
 
     String DUBBO_IP_TO_REGISTRY = "DUBBO_IP_TO_REGISTRY";
 
@@ -115,4 +118,6 @@ public interface Constants {
     String ZOOKEEPER_PROTOCOL = "zookeeper";
 
     String REGISTER_KEY = "register";
+
+    String IGNORE_CHECK_KEYS = "ignoreCheckKeys";
 }
